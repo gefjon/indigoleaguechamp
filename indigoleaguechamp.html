@@ -1,0 +1,478 @@
+<!doctype html>
+<html>
+    <head>
+    
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        
+        <!-- some vars -->
+        <meta name="color:backgroundColor" content="#ffffff">
+        <meta name="text:customFontURL" content="http://rpgoldman.goldman-tribe.org/for_arthur/pkmndp.ttf">
+        <meta name="text:customFontURLBold" content="http://rpgoldman.goldman-tribe.org/for_arthur/pkmndpb.ttf">
+        
+        <!-- sidebar vars -->
+        <meta name="color:sidebarBackground" content="#ffffff">
+        <meta name="text:sidebarTop" content="20px">
+        <meta name="text:sidebarLeft" content="20px">
+        <meta name="text:sidebarPadding" content="5px">
+        <meta name="text:sidebarHeight" content="330px">
+        <meta name="text:sidebarWidth" content="200px">
+        <meta name="text:sidebarAlign" content="center">
+        <meta name="color:sidebarBorderTopColor" content="#BC5858">
+        <meta name="color:sidebarBorderColor" content="000000">
+        <meta name="text:sidebarBackgroundImageURL" content="http://41.media.tumblr.com/fedb55c9f33a836dea8b0da28979637d/tumblr_nqgzz10OKg1uof6yto1_75sq.png">
+        
+        <!-- posts vars -->
+        <meta name="text:postsTop" content="10px">
+        <meta name="text:postsLeft" content="300px">
+        <meta name="text:postsWidth" content="500px">
+        <meta name="color:postsBackgroundColor" content:"#ADC2FF">
+        
+        <!-- individual post vars -->
+        <meta name="color:postBodyBackgroundColor" content="#FFFFFF">
+        <meta name="color:postBackgroundColor" content="#FFFFFF">
+        <meta name="color:postBorderColor" content="#000000">
+        <meta name="color:postLRBorderColor" content="#BC5858"
+        <meta name="text:postMargin" content="10px">
+        <meta name="text:postPadding" content="10px">
+        <meta name="text:postBackgroundImageURL" content="http://41.media.tumblr.com/fedb55c9f33a836dea8b0da28979637d/tumblr_nqgzz10OKg1uof6yto1_75sq.png">
+        <meta name="color:postTitleBackgroundColor" content:="#bc5858">
+        
+        <!-- link vars -->
+        <meta name="color:linkColor" content="#000000">
+        
+        <!-- some other vars -->
+        <meta name="text:dateTextSize" content="5px">
+        <meta name="text:bodyFont" content="powerClear">
+        <meta name="text:titleFont" content="powerClear">
+    </head>
+    <style>
+        @font-face {
+            font-family:powerClear;
+            src:url({text:customFontURL});
+
+        }
+        
+        @font-face {
+            font-family:powerClear;
+            src:url({text:customFontURLBold});
+            font-weight:bold;
+        }
+        
+        body {
+            background-color:{color:backgroundColor};
+            font-family:{text:bodyFont};
+            line-height:1.2em;
+
+        }
+        #sidebar {
+            background-color:{color:sidebarBackground};
+            position:fixed;
+            top:{text:sidebarTop};
+            left:{text:sidebarLeft};
+            padding:{text:sidebarPadding};
+            height:{text:sidebarHeight};
+            width:{text:sidebarWidth};
+            text-align:{text:sidebarAlign};
+            border-style:solid;
+            border-top-width:8px;
+            border-left-width:1px;
+            border-right-width:1px;
+            border-bottom-width:1px;
+            border-top-color:{color:sidebarBorderTopColor};
+            border-left-color:{color:sidebarBorderColor};
+            border-right-color:{color:sidebarBorderColor};
+            border-bottom-color:{color:sidebarBorderColor};
+            background-image:url({text:sidebarBackgroundImageURL});
+        }
+        #posts {
+            position:absolute;
+            top:{text:postsTop};
+            left:{text:postsLeft};
+            width:{text:postsWidth};
+            background-color:{color:postsBackgroundColor};
+        }
+        .post {
+            background-color:{color:postBackgroundColor};
+            margin:{text:postMargin};
+            padding:{text:postPadding};
+            list-style-type:none;
+            background-image:url({text:postBackgroundImageURL});
+            border-style:solid;
+            border-top-width:8px;
+            border-left-width:1px;
+            border-right-width:1px;
+            border-bottom-width:1px;
+            border-top-color:{color:postLRBorderColor};
+            border-left-color:{color:postBorderColor};
+            border-right-color:{color:postBorderColor};
+            border-bottom-color:{color:postBorderColor};
+            margin:10px;
+        }
+        .body {
+            background-color:{color:postBodyBackgroundColor};
+            padding:5px;
+            margin:10px;
+            border-style:solid;
+            
+            border-top-width:1px;
+            border-left-width:5px;
+            border-bottom-width:1px;
+            border-right-width:5px;
+            
+            border-color:{color:postBorderColor} {color:postLRBorderColor};
+        }
+        
+        .info {
+            background-color:{color:postBodyBackgroundColor};
+            
+            border-style:solid;
+            
+            border-width:1px;
+            border-color:{color:postBorderColor};
+            padding:3px;
+            margin:10px;
+        }
+        
+        a {
+            text-decoration:none;
+            color:{color:linkColor};
+        }
+        
+        .title {
+            font-family:{text:titleFont};
+            font-size:2em;
+            font-weight:bold;
+            background-color:{color:postTitleBackgroundColor};
+            border-width:1px;
+            border-style:solid;
+            border-color:{color:postBorderColor};
+            height:1.2em;
+            
+        }
+        
+        .photo {
+            margin:10px;
+        }
+        
+        .username {
+            font-weight:bold;
+        }
+        
+        .notes {
+            text-align:right;
+            width:80px;
+            position:relative;
+            left:350px;
+        }
+        .date {
+            width:120px;
+        }
+        .titleLink {
+            color:#000000;
+        }
+
+    </style>
+    <body>
+        <div id="sidebar">
+            <div class="title" id="blogTitle"><a href="{BlogURL}" class="titleLink">{Title}</a></div>
+            {block:Description}
+                <p class="body" id="description">{Description}</p>
+            {block:Description}
+            
+            <div class="info">
+                <a href="http://indigoleaguechamp.tumblr.com">theme</a>
+            </div>
+            
+            {block:AskEnabled}
+                <div class="info" id="askLink">
+                    <a href="{BlogURL}ask">{AskLabel}</a>
+                </div>
+            {/block:AskEnabled}
+            
+            {block:SubmitEnabled}
+                <div class="info" id="submitLink">
+                    <a href="{BlogURL}submit">{SubmitLabel}</a>
+                </div>
+            {/block:SubmitEnabled}
+            
+            {block:HasPages}
+                {block:Pages}
+                    <div class="info">
+                        <a href="{URL}">{Label}</a>
+                    </div>
+                {/block:Pages}
+            {/block:HasPages}
+            
+            {block:Pagination}
+                <div class="info" id="pageNav">
+                    {block:PreviousPage}
+                        <a href="{PreviousPage}"> &lt; </a>
+                    {/block:PreviousPage}
+                    {CurrentPage}
+                    {block:NextPage}
+                        <a href="{NextPage}"> &gt; </a>
+                    {/block:NextPage}
+                </div>
+            {/block:Pagination}
+            
+        </div>
+        
+        <ul id="posts">
+            {block:Posts}
+            
+                {block:Text}
+                    <li class="post textPost">
+                        {block:Title}
+                            <div class="title"><a href="{PermaLink}">{Title}</a></div>
+                        {/block:Title}
+                        <div class="body">{Body}</div>
+                        {block:Date}
+                        <div class="info date"><a href="{Permalink}">
+                            {ShortDayOfWeek} {DayOfMonthWithZero}{DayOfMonthSuffix} {ShortMonth} {Year} at {24Hour}:{Minutes} {Seconds}
+                        </a></div>
+                    {/block:Date}
+                    {block:NoteCount}
+                        <div class="info notes">
+                            {NoteCountWithLabel}
+                        </div>
+                    {/block:NoteCount}
+                    {block:HasTags}
+                        <div class="info tags">
+                            {block:Tags}
+                                <a href="{TagURLChrono}">{Tag}</a>
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
+                    </li>
+                    
+                    
+                {/block:Text}
+                
+                {block:Photo}
+                    <li class="post imgPost">
+                        <img class="photo" src="{PhotoURL-250}" alt="{PhotoAlt}"><br>
+                        {block:Caption}
+                            <div class="caption body">{Caption}</div>
+                        {/block:Caption}
+                        {block:Date}
+                        <div class="info date"><a href="{Permalink}">
+                            {ShortDayOfWeek} {DayOfMonthWithZero}{DayOfMonthSuffix} {ShortMonth} {Year} at {24Hour}:{Minutes} {Seconds}
+                        </a></div>
+                    {/block:Date}
+                    
+                    {block:NoteCount}
+                        <div class="info notes">
+                            {NoteCountWithLabel}
+                        </div>
+                    {/block:NoteCount}
+                    {block:HasTags}
+                        <div class="info tags">
+                            {block:Tags}
+                                <a href="{TagURLChrono}">{Tag}</a>
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
+                    </li>
+                {/block:Photo}
+                
+                {block:Photoset}
+                    <li class="post photoset">
+                        {Photoset-250}
+                        {block:Caption}
+                            <div class="caption body">{Caption}</div>
+                        {/block:Caption}
+                        {block:Date}
+                        <div class="info date"><a href="{Permalink}">
+                            {ShortDayOfWeek} {DayOfMonthWithZero}{DayOfMonthSuffix} {ShortMonth} {Year} at {24Hour}:{Minutes} {Seconds}
+                        </a></div>
+                    {/block:Date}
+                    
+                    {block:NoteCount}
+                        <div class="info notes">
+                            {NoteCountWithLabel}
+                        </div>
+                    {/block:NoteCount}
+                    {block:HasTags}
+                        <div class="info tags">
+                            {block:Tags}
+                                <a href="{TagURLChrono}">{Tag}</a>
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
+                    </li>
+                {/block:Photoset}
+                
+                {block:Quote}
+                    <li class="post quotePost">
+                        <div class="body quote">
+                            {Quote}
+                        </div>
+                        {block:Source}
+                            <div class="info source">
+                                {Source}
+                            </div>
+                        {/block:Source}
+                        {block:Date}
+                        <div class="info date"><a href="{Permalink}">
+                            {ShortDayOfWeek} {DayOfMonthWithZero}{DayOfMonthSuffix} {ShortMonth} {Year} at {24Hour}:{Minutes} {Seconds}
+                        </a></div>
+                    {/block:Date}
+                    
+                    {block:NoteCount}
+                        <div class="info notes">
+                            {NoteCountWithLabel}
+                        </div>
+                    {/block:NoteCount}
+                    {block:HasTags}
+                        <div class="info tags">
+                            {block:Tags}
+                                <a href="{TagURLChrono}">{Tag}</a>
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
+                    </li>
+                {/block:Quote}
+                
+                {block:Chat}
+                    <li class="post chatPost">
+                        {block:Title}
+                            <h2><a href="{PermaLink}">{Title}</a></h2>
+                        {/block:Title}
+                        <div class="body chatBody">
+                            {block:Lines}
+                                <div class="chat">
+                                    {block:Label}
+                                        <div class="username">{Label}</div>
+                                    {/block:Label}
+                                    {Line}
+                                </div>
+                            {/block:Lines}
+                        </div>
+                        {block:Date}
+                        <div class="info date"><a href="{Permalink}">
+                            {ShortDayOfWeek} {DayOfMonthWithZero}{DayOfMonthSuffix} {ShortMonth} {Year} at {24Hour}:{Minutes} {Seconds}
+                        </a></div>
+                    {/block:Date}
+                    
+                    {block:NoteCount}
+                        <div class="info notes">
+                            {NoteCountWithLabel}
+                        </div>
+                    {/block:NoteCount}
+                    {block:HasTags}
+                        <div class="info tags">
+                            {block:Tags}
+                                <a href="{TagURLChrono}">{Tag}</a>
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
+                    </li>
+                {/block:Chat}
+                
+                {block:Audio}
+                    <li class="post audioPost">
+                        {block:AudioEmbed}
+                            {AudioEmbed-250}
+                        {/block:AudioEmbed}
+                        {block:AudioPlayer}
+                            {AudioPlayer}
+                        {/block:AudioPlayer}
+                        
+                        {block:Playcount}
+                            <div class="info playcount">
+                                Played {FormattedPlayCount} times
+                            </div>
+                        {/block:Playcount}
+                        
+                        {block:Caption}
+                            <div class="caption body">{Caption}</div>
+                        {/block:Caption}
+                        {block:Date}
+                        <div class="info date"><a href="{Permalink}">
+                            {ShortDayOfWeek} {DayOfMonthWithZero}{DayOfMonthSuffix} {ShortMonth} {Year} at {24Hour}:{Minutes} {Seconds}
+                        </a></div>
+                    {/block:Date}
+                    
+                    {block:NoteCount}
+                        <div class="info notes">
+                            {NoteCountWithLabel}
+                        </div>
+                    {/block:NoteCount}
+                    {block:HasTags}
+                        <div class="info tags">
+                            {block:Tags}
+                                <a href="{TagURLChrono}">{Tag}</a>
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
+                    </li>
+                {/block:Audio}
+                
+                {block:Video}
+                    <li class="post videoPost">
+                        {VideoEmbed-250}
+                        {block:Playcount}
+                            <div class="info playcount">
+                                Played {FormattedPlayCount} times
+                            </div>
+                        {/block:Playcount}
+                        
+                        {block:Caption}
+                            <div class="caption body">{Caption}</div>
+                        {/block:Caption}
+                        {block:Date}
+                        <div class="info date"><a href="{Permalink}">
+                            {ShortDayOfWeek} {DayOfMonthWithZero}{DayOfMonthSuffix} {ShortMonth} {Year} at {24Hour}:{Minutes} {Seconds}
+                        </a></div>
+                    {/block:Date}
+                    
+                    {block:NoteCount}
+                        <div class="info notes">
+                            {NoteCountWithLabel}
+                        </div>
+                    {/block:NoteCount}
+                    {block:HasTags}
+                        <div class="info tags">
+                            {block:Tags}
+                                <a href="{TagURLChrono}">{Tag}</a>
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
+                    </li>
+                {/block:Video}
+                
+                {block:Answer}
+                    <li class="post answerPost">
+                        <div class="info question">
+                            <div class="asker">{Asker}:</div>
+                            <br>
+                            {Question}
+                        </div>
+                        <div class="body replies">
+                            {Replies}
+                        </div>
+                        {block:Date}
+                        <div class="info date"><a href="{Permalink}">
+                            {ShortDayOfWeek} {DayOfMonthWithZero}{DayOfMonthSuffix} {ShortMonth} {Year} at {24Hour}:{Minutes} {Seconds}
+                        </a></div>
+                    {/block:Date}
+                    
+                    {block:NoteCount}
+                        <div class="info notes">
+                            {NoteCountWithLabel}
+                        </div>
+                    {/block:NoteCount}
+                    {block:HasTags}
+                        <div class="info tags">
+                            {block:Tags}
+                                <a href="{TagURLChrono}">{Tag}</a>
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
+                    </li>
+                {/block:Answer}
+            {/block:Posts}
+        </ul>
+    </body>
+</html>
